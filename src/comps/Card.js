@@ -5,7 +5,14 @@ import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 
 export default function BasicCard(props) {
-  const { component: Component, isOnline, setIsOnline } = props;
+  const {
+    component: Component,
+    isOnline,
+    setIsOnline,
+    title,
+    description,
+  } = props;
+
   return (
     <Card sx={{ maxWidth: 275 }}>
       <CardContent>
@@ -15,13 +22,14 @@ export default function BasicCard(props) {
           component="h2"
           gutterBottom
         >
-          {props.title}
+          {title}
         </Typography>
-        <Typography>{props.description}</Typography>
+        <Typography>{description}</Typography>
       </CardContent>
-      <CardActions>
-        <Component />
-      </CardActions>
+      <CardActions>{Component ? <Component /> : null}</CardActions>
     </Card>
   );
 }
+
+//export { BasicCard };
+//export default BasicCard;

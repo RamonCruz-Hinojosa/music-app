@@ -3,12 +3,13 @@ import Header from "./comps/Header";
 import { CssBaseline } from "@mui/material";
 import BasicCard from "./comps/Card";
 import { Grid } from "@mui/material";
-import BasicSwitches from "./comps/Switch";
+import BasicSwitches from "./comps/BasicSwitches";
 import DiscreteSlider from "./comps/Slider";
 import BasicSelect from "./comps/Select";
 import { useState } from "react";
 
 export default function Landing() {
+  console.log("Basic Card: ", BasicCard);
   const [isOnline, setIsOnline] = useState(false);
   return (
     <div>
@@ -28,9 +29,9 @@ export default function Landing() {
             <BasicCard
               title="Is Online"
               description="Is this application connected to the internet?"
+              component={BasicSwitches}
               isOnline={isOnline}
               setIsOnline={setIsOnline}
-              component={BasicSwitches}
             />
           </Grid>
           <Grid item>
