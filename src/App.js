@@ -1,16 +1,19 @@
 import * as React from "react";
-import Header from "./comps/Header";
-import SignIn from "./comps/singIn";
-import { CssBaseline } from "@mui/material";
+import Login from "./Login";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import Landing from "./Landing";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <CssBaseline />
-      <Header />
-      <SignIn />
-    </>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Login />
+        </Route>
+        <Route path="/Landing">
+          <Landing />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
-
-export default App;

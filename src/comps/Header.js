@@ -6,8 +6,8 @@ import Typography from "@mui/material/Typography";
 
 function Header() {
   return (
-    <>
-      <Box sx={{}}>
+    <div style={{ display: "block" }}>
+      <Box>
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -16,7 +16,7 @@ function Header() {
           </Toolbar>
         </AppBar>
       </Box>
-    </>
+    </div>
   );
 }
 
