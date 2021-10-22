@@ -1,12 +1,17 @@
 import * as React from "react";
 import Switch from "@mui/material/Switch";
 
-const label = { inputProps: { "aria-label": "Switch demo" } };
-
-export default function BasicSwitches() {
+export default function BasicSwitches(props) {
+  const handleChange = () => {
+    props.setIsOnline(!props.isOnline);
+  };
   return (
     <div>
-      <Switch {...label} defaultChecked />
+      <Switch
+        checked={props.isOnline}
+        onChange={handleChange}
+        name="checkedLeft"
+      />
     </div>
   );
 }

@@ -9,8 +9,8 @@ import BasicSelect from "./comps/Select";
 import { useState } from "react";
 
 export default function Landing() {
-  console.log("Basic Card: ", BasicCard);
   const [isOnline, setIsOnline] = useState(false);
+  const [volume, setVolume] = useState(20);
   return (
     <div>
       <CssBaseline />
@@ -38,12 +38,16 @@ export default function Landing() {
             <BasicCard
               title="Master Volume"
               description="Overrides all other sound settings in this application."
+              component={DiscreteSlider}
+              volume={volume}
+              setVolume={setVolume}
             />
           </Grid>
           <Grid item>
             <BasicCard
               title="Sound Quality"
               description="Manually control the music quality in event of poor connection"
+              component={BasicSelect}
             />
           </Grid>
 

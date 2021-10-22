@@ -11,6 +11,8 @@ export default function BasicCard(props) {
     setIsOnline,
     title,
     description,
+    volume,
+    setVolume,
   } = props;
 
   return (
@@ -26,10 +28,16 @@ export default function BasicCard(props) {
         </Typography>
         <Typography>{description}</Typography>
       </CardContent>
-      <CardActions>{Component ? <Component /> : null}</CardActions>
+      <CardActions>
+        {Component ? (
+          <Component
+            isOnline={isOnline}
+            setIsOnline={setIsOnline}
+            volume={volume}
+            setVolume={setVolume}
+          />
+        ) : null}
+      </CardActions>
     </Card>
   );
 }
-
-//export { BasicCard };
-//export default BasicCard;
