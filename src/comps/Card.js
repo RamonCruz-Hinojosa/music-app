@@ -13,6 +13,8 @@ export default function BasicCard(props) {
     description,
     volume,
     setVolume,
+    quality,
+    setQuality,
   } = props;
 
   return (
@@ -35,6 +37,8 @@ export default function BasicCard(props) {
             setIsOnline={setIsOnline}
             volume={volume}
             setVolume={setVolume}
+            quality={quality}
+            setQuality={setQuality}
           />
         ) : null}
       </CardActions>

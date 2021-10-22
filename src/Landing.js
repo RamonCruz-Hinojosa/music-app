@@ -11,6 +11,7 @@ import { useState } from "react";
 export default function Landing() {
   const [isOnline, setIsOnline] = useState(false);
   const [volume, setVolume] = useState(20);
+  const [quality, setQuality] = useState("Normal");
   return (
     <div>
       <CssBaseline />
@@ -48,6 +49,8 @@ export default function Landing() {
               title="Sound Quality"
               description="Manually control the music quality in event of poor connection"
               component={BasicSelect}
+              quality={quality}
+              setQuality={setQuality}
             />
           </Grid>
 
