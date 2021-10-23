@@ -12,6 +12,7 @@ export default function Landing() {
   const [isOnline, setIsOnline] = useState(false);
   const [volume, setVolume] = useState(20);
   const [quality, setQuality] = useState("Normal");
+  const [notifications, setNotifications] = useState("yo");
   return (
     <div>
       <CssBaseline />
@@ -55,7 +56,7 @@ export default function Landing() {
           </Grid>
 
           <Grid item xs="12">
-            <h3>System Notifications:</h3>
+            <h3>{notifications}</h3>
           </Grid>
         </Grid>
       </div>
