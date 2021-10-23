@@ -12,7 +12,7 @@ export default function Landing() {
   const [isOnline, setIsOnline] = useState(false);
   const [volume, setVolume] = useState(20);
   const [quality, setQuality] = useState("Normal");
-  const [notifications, setNotifications] = useState("yo");
+  const [notifications, setNotifications] = useState(["yo", "oy", "oi"]);
   return (
     <div>
       <CssBaseline />
@@ -56,7 +56,29 @@ export default function Landing() {
           </Grid>
 
           <Grid item xs="12">
-            <h3>{notifications}</h3>
+            <h3>
+              System Notifications:
+              {isOnline ? (
+                ""
+              ) : (
+                <li>
+                  Your application is offline. You won't be able to share or
+                  stream music to other devices.
+                </li>
+              )}
+              {volume > 80 && (
+                <li>
+                  Listening to music at a high volume could cause long-term
+                  hearing loss.
+                </li>
+              )}
+              {quality === "Low" && (
+                <li>
+                  Music quality is degraded. Increase quality if your connection
+                  allows it.
+                </li>
+              )}
+            </h3>
           </Grid>
         </Grid>
       </div>
