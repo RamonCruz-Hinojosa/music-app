@@ -12,8 +12,8 @@ export default function BasicSelect(props) {
   };
 
   useEffect(() => {
-    console.log(props.quality)
-  }, [props.quality])
+    console.log(props.quality);
+  }, [props.quality]);
 
   return (
     <Box sx={{ minWidth: 120 }}>
